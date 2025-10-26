@@ -21,8 +21,9 @@ public class MstTest {
             graph.add(new ArrayList<>());
         }
         for (int[] edge : edges) {
-            graph.get(edge[0]).add(new int[]{edge[1], edge[2]});
-            graph.get(edge[1]).add(new int[]{edge[0], edge[2]});
+            int from = edge[0], to = edge[1], weight = edge[2];
+            graph.get(from).add(new int[]{to, weight});
+            graph.get(to).add(new int[]{from, weight});
         }
 
         MstResult prim = PrimAlgorithm.prim(nodes, graph);
@@ -46,8 +47,9 @@ public class MstTest {
         List<List<int[]>> graph = new ArrayList<>();
         for (int i = 0; i < nodes.size(); i++) graph.add(new ArrayList<>());
         for (int[] edge : edges) {
-            graph.get(edge[0]).add(new int[]{edge[1], edge[2]});
-            graph.get(edge[1]).add(new int[]{edge[0], edge[2]});
+            int from = edge[0], to = edge[1], weight = edge[2];
+            graph.get(from).add(new int[]{to, weight});
+            graph.get(to).add(new int[]{from, weight});
         }
 
         MstResult prim = PrimAlgorithm.prim(nodes, graph);

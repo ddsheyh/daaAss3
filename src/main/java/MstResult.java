@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 
 class MstResult {
     List<int[]> mstEdges;
@@ -7,7 +7,7 @@ class MstResult {
     double executionTime;
 
     public MstResult(List<int[]> edges, int totalCost, int operationsCount, double executionTime) {
-        this.mstEdges = mstEdges;
+        this.mstEdges = mstEdges != null ? mstEdges : new ArrayList<>();
         this.totalCost = totalCost;
         this.operationsCount = operationsCount;
         this.executionTime = executionTime;
